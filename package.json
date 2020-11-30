@@ -6,12 +6,20 @@
     "name": "David Eberlein",
     "email": "david.eberlein@unblu.com"
   },
+  "keywords": [
+    "OnSong",
+    "MobileSheets",
+    "Chordpro"
+  ],
   "main": "index.js",
+  "bin": {
+    "onsongtxt2chordpro": "./index.js"
+  },
   "dependencies": {
     "glob": "^7.1.6",
     "yargs": "^16.1.1"
   },
   "scripts": {
-    "build": "node ./index.js"
+    "run": "node ./index.js"
   }
 }

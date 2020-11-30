@@ -1,28 +1,36 @@
-const glob = require('glob');
-const fs = require('fs');
-const path = require('path');
-const ongsongTxt2Chordpro = require('./onsongtxt2chordpro');
+#!/usr/bin/env node
+
+const yargs = require('yargs');
+const onsongTxt2Chordpro = require('./onsongtxt2chordpro');
 
 
-const INPUT_DIR = `${__dirname}/src/**/*.txt`;
-const OUTPUT_DIR = `${__dirname}/build/`;
+const argv = yargs
+    .usage('Usage: $0 onsongtxt2chordpro [options]')
+    .option('input', {
+        alias: 'i',
+        description: 'Input directory to look for *.txt files',
+        default: `./src`,
+        type: 'path',
+    })
+    .option('output', {
+        alias: 'o',
+        description: 'Output directory to to save thr *.chordpro files to',
+        default: `./build`,
+        type: 'path',
+    })
+    .help()
+    .alias('help', 'h')
+    .argv;
 
-function replaceFileContent(file, searchValue, replacment) {
-    file.contents = String(file.contents).replace(searchValue, replacment);
-    return file;
-}
+// Prepare args
+let input = String(argv.input);
+if (input.endsWith('/'))
+    input = input.substring(0, input.length - 1)
+
+let output = String(argv.output);
+if (output.endsWith('/'))
+    output = output.substring(0, output.length - 1)
 
 
-// getting all html files
-glob.sync(INPUT_DIR)
-    .map(absoluteFilePath => ({ name: path.basename(absoluteFilePath), contents: fs.readFileSync(absoluteFilePath, { encoding: "utf8" }) }))
-    .map(file => ({ name: file.name, contents: ongsongTxt2Chordpro(file.name, file.contents) }))
-    .map(file => replaceFileContent(file, /^(.*)\n/g, '{title:$1}\n'))
-    .map(file => replaceFileContent(file, /}\n(.*)\n/g, '}\n{copyright:$1}\n'))
-    .map(file => replaceFileContent(file, /^Key:(.*?)$/mg, '{key:$1}'))
-    .map(file => replaceFileContent(file, /^Tempo:(.*)$/mg, '{tempo:$1}'))
-    .map(file => replaceFileContent(file, /^Time:(.*)$/mg, '{time:$1}'))
-    .map(file => replaceFileContent(file, /(\{key:(.*?)}\n\{tempo:(.*?)}\n\{time:(.*?)})/g, '{subtitle:key: $2 | tempo: $3 | time: $4}\n$1'))
-    .map(file => replaceFileContent(file, /(.+:)\n/g, '{comment_italic:$1}\n'))
-    .map(file => ({ ...file, name: file.name.replace('\.txt', '.chordpro') }))
-    .forEach(file => fs.writeFileSync(OUTPUT_DIR + file.name, file.contents, { encoding: "utf8" }));
+// Convert files
+onsongTxt2Chordpro(argv.input, argv.output);
