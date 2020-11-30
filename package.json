@@ -1,12 +1,15 @@
 {
-  "name": "songsheet-generator",
-  "version": "0.0.1",
-  "devDependencies": {
-    "readable-stream": "^2.0.1",
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "promise": "^7.0.4"
+  "name": "onsongtxt-2-chordpro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "glob": "^7.1.6"
+  },
+  "scripts": {
+    "build": "node ./index.js"
+  },
+  "license": "MIT",
+  "bin": {
+    "hello": "./index.js"
   }
 }
