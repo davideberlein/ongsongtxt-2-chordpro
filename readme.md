@@ -1,6 +1,12 @@
 # OnSong text 2 chord pro converter
-Simple node tool that allows to to convert song sheets in [OnSong](https://onsongapp.com/) text format to chordpro so they can be used by apps like [MobileSheets](https://www.zubersoft.com/mobilesheets/).
-This allows sharing one set of sheets between iOS (OnSong) and Android (MobileSheets) devices.
+Simple node cli tool that allows to to convert song sheets in [OnSong](https://onsongapp.com/) chord over lyrics text format to ChordPro so they can be used by apps like [MobileSheets](https://www.zubersoft.com/mobilesheets/).
+This allows sharing one set of sheets between iOS (OnSong) and Android/Windows (MobileSheets) devices.
+
+This tool assumes the OnSong chords are expressed in the _chords over lyrics_ notation see https://onsongapp.com/docs/features/formats/onsong/chords/
+
+The standard OnSong tags that can be found in their official example are supported: http://onsongapp.s3.amazonaws.com/manual/example.txt _Note that the example uses 'brackeded chords' notation which isn't supported by this tool_
+
+The converted format complies to the ChordPro standard: https://www.chordpro.org/chordpro/chordpro-file-format-specification/
 
 # Installation & Running
 
