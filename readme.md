@@ -18,6 +18,8 @@ onsongtxt2chordpro -i <input folder> -o <output folder>
 will convert every `*.txt` file found in the _input folder_ from its OnSong text format to the chordpro format and will save the converted file to the _output folder_.
 The file names will be kept but the extention will be changed to `*.chordpro` so you can use the same folder as source and destination.
 ## Options
+```
   -i, --input    Input directory to look for *.txt files [default: "./src"]
   -o, --output   Output directory to to save thr *.chordpro files to [default: "./build"]
+```
  
