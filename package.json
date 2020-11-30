@@ -1,10 +1,10 @@
 {
   "name": "onsongtxt-2-chordpro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": {
     "name": "David Eberlein",
-    "email": "david.eberlein@unblu.com"
+    "email": "davideberlein@gmail.com"
   },
   "keywords": [
     "OnSong",

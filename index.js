@@ -5,18 +5,16 @@ const onsongTxt2Chordpro = require('./onsongtxt2chordpro');
 
 
 const argv = yargs
-    .usage('Usage: $0 onsongtxt2chordpro [options]')
+    .usage('Usage: $0 [options]')
     .option('input', {
         alias: 'i',
         description: 'Input directory to look for *.txt files',
-        default: `./src`,
-        type: 'path',
+        default: `./src`
     })
     .option('output', {
         alias: 'o',
         description: 'Output directory to to save thr *.chordpro files to',
-        default: `./build`,
-        type: 'path',
+        default: `./build`
     })
     .help()
     .alias('help', 'h')

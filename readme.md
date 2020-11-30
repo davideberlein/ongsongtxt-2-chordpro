@@ -4,17 +4,20 @@ This allows sharing one set of sheets between iOS (OnSong) and Android (MobileSh
 
 # Installation & Running
 
-**For now:**
-Simply clone this repo and run:
+## Installation
+Onsongtxt 2 chordpro can be installed as a global npm module so it can be used from every folder.
 ```
-npm install
+npm install ongsongtxt-2-chordpro -g
 ```
-for installation, after that you can call 
-```
-npm run build
-```
-Every time you want to convert your files. This will automatically take every **.txt* file from the `src` folder, convert it to `*.chordpro` and save it in the `build` folder.
 
-**In the works:**
-Proper npm and command line usage is in the works.
-<!---`npm install ongsongtxt-2-chordpro -g`--->
+## Usage
+Calling the command:
+```
+onsongtxt2chordpro -i <input folder> -o <output folder>
+```
+will convert every `*.txt` file found in the _input folder_ from its OnSong text format to the chordpro format and will save the converted file to the _output folder_.
+The file names will be kept but the extention will be changed to `*.chordpro` so you can use the same folder as source and destination.
+## Options
+  -i, --input    Input directory to look for *.txt files [default: "./src"]
+  -o, --output   Output directory to to save thr *.chordpro files to [default: "./build"]
+ 
