@@ -6,8 +6,14 @@ This allows sharing one set of sheets between iOS (OnSong) and Android (MobileSh
 
 **For now:**
 Simply clone this repo and run:
-`npm run build`
-This will automatically take every **.txt* file from the `src` folder, convert it to `*.chordpro` and save it in the `build` folder.
+```
+npm install
+```
+for installation, after that you can call 
+```
+npm run build
+```
+Every time you want to convert your files. This will automatically take every **.txt* file from the `src` folder, convert it to `*.chordpro` and save it in the `build` folder.
 
 **In the works:**
 Proper npm and command line usage is in the works.
