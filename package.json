@@ -1,15 +1,17 @@
 {
   "name": "onsongtxt-2-chordpro",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "David Eberlein",
+    "email": "david.eberlein@unblu.com"
+  },
   "main": "index.js",
   "dependencies": {
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "yargs": "^16.1.1"
   },
   "scripts": {
     "build": "node ./index.js"
-  },
-  "license": "MIT",
-  "bin": {
-    "hello": "./index.js"
   }
 }
