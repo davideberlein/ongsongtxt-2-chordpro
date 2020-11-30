@@ -20,6 +20,6 @@ The file names will be kept but the extention will be changed to `*.chordpro` so
 ## Options
 ```
   -i, --input    Input directory to look for *.txt files [default: "./src"]
-  -o, --output   Output directory to to save thr *.chordpro files to [default: "./build"]
+  -o, --output   Output directory to to save the *.chordpro files to [default: "./build"]
 ```
  

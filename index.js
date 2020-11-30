@@ -13,7 +13,7 @@ const argv = yargs
     })
     .option('output', {
         alias: 'o',
-        description: 'Output directory to to save thr *.chordpro files to',
+        description: 'Output directory to to save the *.chordpro files to',
         default: `./build`
     })
     .help()
